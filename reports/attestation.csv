@@ -1,0 +1,8 @@
+finding_id,control,severity,principal,role,status,owner,approver,ticket,expires_on
+5a4ed0668adabbe6,AZ-002,High,Workflow Connector,Owner,open,,,,
+a08f88327f252ad0,DIR-001,High,taylor@example.test,Global Administrator,open,,,,
+5f2033fac9eeabc3,DIR-002,High,taylor@example.test,Global Administrator,open,,,,
+5d08dced356ffecc,DIR-004,High,Workflow Connector,Global Administrator,open,,,,
+e6837d70791db325,APP-001,Medium,Workflow Connector,Application credential,open,,,,
+77d8bfa69ddebd05,AZ-001,Medium,Workflow Connector,Owner,open,,,,
+85c520b30e891168,DIR-003,Medium,morgan@example.test,Global Administrator,open,,,,

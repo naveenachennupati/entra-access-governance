@@ -1,0 +1,82 @@
+{
+  "source": "Fictional regression fixture only",
+  "users": [
+    {
+      "id": "u1",
+      "displayName": "Taylor Lopez",
+      "userPrincipalName": "taylor@example.test",
+      "accountEnabled": false,
+      "userType": "Guest"
+    },
+    {
+      "id": "u2",
+      "displayName": "Morgan Reed",
+      "userPrincipalName": "morgan@example.test",
+      "accountEnabled": true,
+      "userType": "Member",
+      "signInActivity": {
+        "lastSignInDateTime": "2026-04-01T12:00:00Z"
+      }
+    }
+  ],
+  "service_principals": [
+    {
+      "id": "sp1",
+      "displayName": "Workflow Connector",
+      "appId": "00000000-0000-0000-0000-000000000010",
+      "passwordCredentials": [
+        {
+          "keyId": "key-test",
+          "endDateTime": "2026-11-28T00:00:00Z"
+        }
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "g1",
+      "displayName": "Operations Admins"
+    }
+  ],
+  "directory_role_definitions": [
+    {
+      "id": "role-1",
+      "displayName": "Global Administrator"
+    }
+  ],
+  "directory_role_assignments": [
+    {
+      "principalId": "u1",
+      "roleDefinitionId": "role-1",
+      "directoryScopeId": "/"
+    },
+    {
+      "principalId": "sp1",
+      "roleDefinitionId": "role-1",
+      "directoryScopeId": "/"
+    },
+    {
+      "principalId": "u2",
+      "roleDefinitionId": "role-1",
+      "directoryScopeId": "/"
+    }
+  ],
+  "azure_role_definitions": [
+    {
+      "id": "/subscriptions/demo/providers/Microsoft.Authorization/roleDefinitions/owner",
+      "properties": {
+        "roleName": "Owner"
+      }
+    }
+  ],
+  "azure_role_assignments": [
+    {
+      "id": "az-001",
+      "properties": {
+        "principalId": "sp1",
+        "scope": "/subscriptions/demo",
+        "roleDefinitionId": "/subscriptions/demo/providers/Microsoft.Authorization/roleDefinitions/owner"
+      }
+    }
+  ]
+}

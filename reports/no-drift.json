@@ -1,0 +1,9 @@
+{
+  "status": "change review required; membership changes are not categorized as malicious",
+  "added_assignments": [],
+  "removed_assignments": [],
+  "before_count": 4,
+  "after_count": 4,
+  "before_sha256": "c84829cfbf68d74a5b9302eff042541132d0ca6f0429e85804ab4ded4781a74a",
+  "after_sha256": "c84829cfbf68d74a5b9302eff042541132d0ca6f0429e85804ab4ded4781a74a"
+}

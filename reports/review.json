@@ -1,0 +1,118 @@
+{
+  "as_of": "2026-11-16",
+  "source": "Fictional regression fixture only",
+  "record_counts": {
+    "users": 2,
+    "applications": 1,
+    "directory_role_assignments": 3,
+    "azure_role_assignments": 1
+  },
+  "severity_counts": {
+    "High": 4,
+    "Medium": 3
+  },
+  "findings": [
+    {
+      "control": "AZ-002",
+      "severity": "High",
+      "principal": "Workflow Connector",
+      "role": "Owner",
+      "evidence": {
+        "assignment_id": "az-001",
+        "principal_id": "sp1",
+        "scope": "/subscriptions/demo",
+        "role_name": "Owner"
+      },
+      "reason": "Application identity has Azure Owner role",
+      "review_action": "Confirm workload ownership and eliminate excess privileges when feasible",
+      "source": "access review evidence"
+    },
+    {
+      "control": "DIR-001",
+      "severity": "High",
+      "principal": "taylor@example.test",
+      "role": "Global Administrator",
+      "evidence": {
+        "principal_id": "u1",
+        "role_definition_id": "role-1",
+        "scope": "/"
+      },
+      "reason": "Disabled identity retains a directory role",
+      "review_action": "Confirm identity status and revoke unneeded assignment after approval",
+      "source": "access review evidence"
+    },
+    {
+      "control": "DIR-002",
+      "severity": "High",
+      "principal": "taylor@example.test",
+      "role": "Global Administrator",
+      "evidence": {
+        "principal_id": "u1",
+        "role_definition_id": "role-1",
+        "scope": "/"
+      },
+      "reason": "External guest holds a directory role",
+      "review_action": "Confirm sponsorship, scope and business justification",
+      "source": "access review evidence"
+    },
+    {
+      "control": "DIR-004",
+      "severity": "High",
+      "principal": "Workflow Connector",
+      "role": "Global Administrator",
+      "evidence": {
+        "principal_id": "sp1",
+        "role_definition_id": "role-1",
+        "scope": "/"
+      },
+      "reason": "Service principal has a highly privileged directory role",
+      "review_action": "Validate application owner, privilege rationale and identity protections",
+      "source": "access review evidence"
+    },
+    {
+      "control": "APP-001",
+      "severity": "Medium",
+      "principal": "Workflow Connector",
+      "role": "Application credential",
+      "evidence": {
+        "app_id": "00000000-0000-0000-0000-000000000010",
+        "expires_utc": "2026-11-28T00:00:00+00:00",
+        "key_id": "key-test"
+      },
+      "reason": "Credential expires in 12 days",
+      "review_action": "Coordinate approved rotation using a secure secret store",
+      "source": "access review evidence"
+    },
+    {
+      "control": "AZ-001",
+      "severity": "Medium",
+      "principal": "Workflow Connector",
+      "role": "Owner",
+      "evidence": {
+        "assignment_id": "az-001",
+        "principal_id": "sp1",
+        "scope": "/subscriptions/demo",
+        "role_name": "Owner"
+      },
+      "reason": "Broad subscription-scope permission warrants business-owner attestation",
+      "review_action": "Review whether resource-group scope or a narrower role satisfies the need",
+      "source": "access review evidence"
+    },
+    {
+      "control": "DIR-003",
+      "severity": "Medium",
+      "principal": "morgan@example.test",
+      "role": "Global Administrator",
+      "evidence": {
+        "principal_id": "u2",
+        "role_definition_id": "role-1",
+        "scope": "/",
+        "last_signin": "2026-04-01T12:00:00+00:00"
+      },
+      "reason": "No recorded sign-in for 228 days (data availability dependent)",
+      "review_action": "Verify service usage and access owner before removal",
+      "source": "access review evidence"
+    }
+  ],
+  "interpretation": "Reviewer queue; findings are prompts for owner validation, not proof of compromise."
+}
